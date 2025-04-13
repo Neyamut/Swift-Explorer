@@ -1,0 +1,555 @@
+/* ========== GENERAL STYLING ========== */
+body {
+    margin: 0;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(img1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  h1 {
+    margin-bottom: 10px;
+  }
+  
+  /* ========== TYPOGRAPHY ========== */
+  body, input, button, textarea {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* ========== HEADER ========== */
+  header {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  header a {
+    color: white;
+    text-decoration: none;
+    font-size: 3vmin;
+    font-family: poppins;
+    font-weight: bold;
+  }
+  
+  /* ========== NAVIGATION ========== */
+  .navbar {
+    background-color: rgb(6, 154, 129);
+    padding: 10px 0;
+  }
+  
+  .navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Left Side: Search */
+  .search-wrapper {
+    position: relative;
+    width: 250px;
+  }
+  
+  .search-wrapper input {
+    width: 100%;
+    padding: 10px 65px 10px 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .search-icon {
+    right: 35px;
+  }
+  
+  .mic-icon {
+    right: 10px;
+  }
+  
+  /* Center: Nav Links */
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-family: poppins;
+    font-size: 2vmin;
+    padding: 10px;
+  }
+  
+  .nav-links a:hover {
+    background-color: rgba(4, 9, 30, 0.7);
+    border-radius: 4px;
+  }
+  
+  /* Right Side: Accessibility Buttons */
+  .accessibility-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .accessibility-buttons button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #000000;
+    cursor: pointer;
+  }
+  
+  .accessibility-buttons button:hover {
+    background-color: #a3a3a3;
+    transform: scale(1.05);
+  }
+  
+  
+  
+  
+  /* ========== TITLES & TEXT ========== */
+  .title {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+  }
+  
+  .t1 { font-size: 25px; }
+  .para { margin-top: -10px; }
+  
+  /* ========== FLEXIBLE LAYOUTS ========== */
+  .container, .containerpac {
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+  }
+  
+  .containerl, .containerc {
+    margin: 20px;
+  }
+  
+  .containerm {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  /* ========== CARDS ========== */
+  .card, .cardpac {
+    background-color: rgb(6, 154, 129);
+    width: 470px;
+    height: 400px;
+    margin: 10px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+  }
+  
+  .card-img {
+    background-color: bisque;
+    height: 250px;
+    margin-bottom: 15px;
+    background-size: cover;
+    border-radius: 15px;
+  }
+  
+  .card a, .cardpac a {
+    color: black;
+    background-color: rgb(161, 188, 183);
+    padding: 15px 20px;
+    display: block;
+    margin: 10px auto;
+    width: fit-content;
+    border-radius: 15px;
+    text-decoration: none;
+  }
+  
+  .card:hover, .cardpac:hover {
+    background-color: rgba(59, 24, 24, 0.7);
+    color: white;
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+  
+  .card a:hover, .cardpac a:hover {
+    background-color: rgba(4, 9, 30, 0.7);
+    color: white;
+    transform: scale(1.1);
+  }
+  
+  .p1 { background-image: url(img3.jpg); }
+  .p2 { background-image: url(img4.jpg); }
+  .p3 { background-image: url(img5.jpg); }
+  
+  /* ========== TEXT BLOCKS ========== */
+  .txt {
+    color: white;
+    text-align: center;
+    margin: 0 22px;
+  }
+  
+  .city h1 {
+    font-size: 50px;
+    color: white;
+  }
+  .city h2 {
+    font-size: 50px;
+    color: white;
+  }
+  .city p {
+    text-align: justify;
+    color: white;
+  }
+  
+
+  
+  .card p, .cardpac p {
+    margin: 0 40px;
+    font-size: 15px;
+  }
+  
+  .cardpac ul {
+    font-size: 23px;
+    background-color: rgb(116, 139, 120);
+    height: 150px;
+    text-align: left;
+    padding-top: 20px;
+  }
+  
+  /* ========== FORM ELEMENTS ========== */
+  textarea, input[type="text"], input[type="email"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid rgb(6, 154, 129);
+    background: #fff;
+  }
+  
+  label {
+    margin-bottom: 6px;
+    display: block;
+    color: rgb(6, 154, 129);
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  /* ========== BUTTONS ========== */
+  button, .btn-field button {
+    padding: 8px 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(6, 154, 129);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover, .btn-field button:hover {
+    background-color: rgba(4, 9, 30, 0.7);
+    transform: scale(1.1);
+  }
+  
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    .search-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .search-container input {
+      width: 100%;
+    }
+  }
+  
+  /* ========== ACCESSIBILITY ========== */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+  
+  .high-contrast {
+    background-color: #000 !important;
+    color: #FFD700 !important;
+  }
+  
+  .high-contrast a,
+  .high-contrast button,
+  .high-contrast input,
+  .high-contrast textarea,
+  .high-contrast select {
+    color: #FFD700 !important;
+    background-color: #000 !important;
+    border: 2px solid #FFD700 !important;
+  }
+  
+  .high-contrast label,
+  .high-contrast .contactl,
+  .high-contrast .contactr {
+    color: #FFD700 !important;
+    background-color: #000 !important;
+  }
+  
+  /* Focus styles */
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 3px solid #FFD700;
+    outline-offset: 3px;
+    background-color: #222;
+    color: #fff;
+  }
+  
+  /* Optional link enhancements */
+  a {
+    text-decoration: underline;
+  }
+  
+  a:hover {
+    color: #ff0;
+    background-color: #111;
+  }
+  
+  /* Hover speak */
+  .hover-speak-enabled .speakable {
+    cursor: pointer;
+    outline: 2px dashed #ffa500;
+  }
+  
+  .hover-speaking {
+    background-color: #fffae637;
+  }
+  
+  /* Magnifier Canvas */
+  #magnifierCanvas {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    border: 3px solid #aaa;
+    border-radius: 50%;
+    pointer-events: none;
+    display: none;
+    z-index: 9999;
+  }
+  
+  .containerc h1,
+.containerc p {
+  color: white;
+}
+
+
+.converter-card {
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 25px 30px;
+    max-width: 400px;
+    width: 90%;
+    margin: 20px auto;
+  }
+  
+  .converter-card h3 {
+    margin-bottom: 20px;
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .converter-card label {
+    color: #000;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .converter-card input {
+    background-color: #f5f5f5;
+    color: #000;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .converter-card button {
+    background-color: rgb(6, 154, 129);
+    color: white;
+    padding: 10px 16px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .converter-card button:hover {
+    background-color: rgba(4, 9, 30, 0.7);
+    transform: scale(1.05);
+  }
+  
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    background-color: rgba(0, 0, 0, 0.601);
+    padding: 40px 20px;
+    border-radius: 12px;
+  }
+
+  .contact-form,
+  .contact-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+  }
+
+  .contact-form h3,
+  .contact-info h3 {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    background: #fff;
+    color: #000;
+    border: 2px solid rgb(6, 154, 129);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .contact-info p {
+    color: #fff;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .form-box {
+    width: 90%;
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: left; /* Align form content left */
+  }
+  
+  .form-box h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    color: rgb(6, 154, 129);
+    margin-bottom: 5px;
+  }
+  
+  .login-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  .form-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(6, 154, 129);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .form-box button:hover {
+    background-color: rgba(4, 9, 30, 0.7);
+    transform: scale(1.02);
+  }
+  
+  .form-box p {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .site-footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 40px;
+    border-top: 2px solid rgb(6, 154, 129);
+  }
+  
+  .site-footer p {
+    margin: 0;
+  }
+  
+  .high-contrast .site-footer {
+    background-color: #000 !important;
+    color: #FFD700 !important;
+    border-color: #FFD700;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

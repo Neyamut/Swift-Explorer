@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Swift Explorer - Packages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="stylesheet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="speakable">Swift Explorer</a>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="navbar-inner">
+      <!-- Left: Search -->
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+        <span class="icon search-icon" onclick="triggerSearch()">🔍</span>
+        <span class="icon mic-icon" onclick="startVoiceInput()">🎙️</span>
+      </div>
+
+      <!-- Center: Nav Links -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="speakable">Home</a></li>
+        <li><a href="location.html" class="speakable">Location</a></li>
+        <li><a href="packages.html" class="speakable">Packages</a></li>
+        <li><a href="contact.html" class="speakable">Contact</a></li>
+        <li><a href="Login.html" class="speakable">Login</a></li>
+      </ul>
+
+      <!-- Right: Accessibility Buttons -->
+      <div class="accessibility-buttons">
+        <button onclick="toggleMagnifier()" aria-label="Toggle Magnifier">🔍 Magnifier</button>
+        <button onclick="toggleContrast()" aria-label="Toggle High Contrast Mode">🌗 Contrast</button>
+        <button onclick="toggleHoverSpeak()" aria-label="Toggle Hover Speak">🗣️ Hover Speak</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Travel Packages Section -->
+    <section class="containerpac">
+      <div class="cardpac">
+        <h2 class="speakable">Solo Package</h2>
+        <p class="speakable">This package includes:</p>
+        <ul class="speakable">
+          <li>Accommodation</li>
+          <li>Sightseeing</li>
+          <li>Cultural Food</li>
+          <li>Guide</li>
+          <li>Souvenir T-shirt</li>
+        </ul>
+        <a href="#" class="speakable">Buy<br>£1000</a>
+      </div>
+
+      <div class="cardpac">
+        <h2 class="speakable">Family Package</h2>
+        <p class="speakable">This package includes:</p>
+        <ul class="speakable">
+          <li>Hotel Stay</li>
+          <li>Sightseeing</li>
+          <li>Traditional Cuisine</li>
+          <li>Family Activities</li>
+          <li>T-shirts</li>
+        </ul>
+        <a href="#" class="speakable">Buy<br>£1500</a>
+      </div>
+
+      <div class="cardpac">
+        <h2 class="speakable">Group Package</h2>
+        <p class="speakable">This package includes:</p>
+        <ul class="speakable">
+          <li>Shared Adventures</li>
+          <li>Group Activities</li>
+          <li>Educational Tours</li>
+          <li>Photography Sessions</li>
+          <li>T-shirts</li>
+        </ul>
+        <a href="#" class="speakable">Buy<br>£500</a>
+      </div>
+    </section>
+
+    <!-- Currency Converter Section -->
+    <div class="converter converter-card">
+        <h3 class="speakable">Convert USD to GBP</h3>
+        <label for="usdInput" class="speakable">Enter USD:</label>
+        <div class="inc">
+          <input type="number" id="usdInput" placeholder="Enter USD Amount" class="speakable" />
+        </div>
+        <button onclick="convert()" class="speakable">Convert</button>
+      
+        <label for="gbpOutput" class="speakable">Converted GBP:</label>
+        <div class="inc">
+          <input type="text" id="gbpOutput" readonly class="speakable" />
+        </div>
+      </div>
+      
+
+  <!-- Magnifier Canvas -->
+  <canvas id="magnifierCanvas" width="150" height="150"></canvas>
+
+  <!-- Inline JS Converter (if not already in script.js) -->
+  <script>
+    function convert() {
+      const usd = parseFloat(document.getElementById("usdInput").value);
+      const rate = 0.79;
+      const gbp = (usd * rate).toFixed(2);
+      document.getElementById("gbpOutput").value = gbp;
+    }
+  </script>
+  <footer role="contentinfo" class="site-footer">
+    <h2>Designed for inclusivity.</h2>
+  </footer>
+</body>
+</html>

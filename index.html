@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swift Explorer </title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script defer src="script.js"></script>
+
+</head>
+<body>
+  <header role="banner" aria-label="Main Site Header">
+    <a href="index.html">Swift Explorer</a>
+  </header>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      
+      <!-- Left: Search Field -->
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+        <span class="icon search-icon" onclick="triggerSearch()">🔍</span>
+        <span class="icon mic-icon" onclick="startVoiceInput()">🎙️</span>
+      </div>
+  
+      <!-- Center: Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="speakable">Home</a></li>
+        <li><a href="location.html" class="speakable">Location</a></li>
+        <li><a href="packages.html" class="speakable">Packages</a></li>
+        <li><a href="contact.html" class="speakable">Contact</a></li>
+        <li><a href="Login.html" class="speakable">Login</a></li>
+      </ul>
+  
+      <!-- Right: Accessibility Buttons -->
+      <div class="accessibility-buttons">
+        <button onclick="toggleMagnifier()" aria-label="Toggle Magnifier">🔍 Magnifier</button>
+        <button onclick="toggleContrast()" aria-label="Toggle Contrast">🌗 Contrast</button>
+        <button onclick="toggleHoverSpeak()" aria-label="Toggle Hover Speak">🗣️ Hover Speak</button>
+      </div>
+  
+    </div>
+  </nav>
+  
+  
+  
+  
+
+  <main role="main" aria-label="Main Content">
+    <div class="title speakable">
+      <h2>Top 3 Places To Travel</h2>
+    </div>
+    <section class="container">
+      <div class="card">
+        <div class="card-img p1" role="img" aria-label="Image of Paris"></div>
+        <h2 class="speakable">Paris</h2>
+        <p class="speakable">"The City of Love, captivates with its romantic ambiance and iconic landmarks like the Eiffel Tower."</p>
+        <a href="location.html#paris" class="speakable">Read More</a>
+      </div>
+      <div class="card">
+        <div class="card-img p2" role="img" aria-label="Image of Santorini"></div>
+        <h2 class="speakable">Santorini</h2>
+        <p class="speakable">"A Greek paradise with stunning sunsets, crystal-clear waters, and white-washed architecture."</p>
+        <a href="location.html#santorini" class="speakable">Read More</a>
+      </div>
+      <div class="card">
+        <div class="card-img p3" role="img" aria-label="Image of London"></div>
+        <h2 class="speakable">London</h2>
+        <p class="speakable">"A melting pot of history and modernity, enchants visitors with its diverse culture."</p>
+        <a href="location.html#london" class="speakable">Read More</a>
+      </div>
+    </section>
+  </main>
+  
+  <canvas id="magnifierCanvas" width="150" height="150"></canvas>
+  <footer role="contentinfo" class="site-footer">
+    <h2>Designed for inclusivity.</h2>
+  </footer>
+  
+</body>
+</html>

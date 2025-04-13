@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Swift Explorer - Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="stylesheet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="speakable">Swift Explorer</a>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="navbar-inner">
+      <!-- Left: Search -->
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search..." aria-label="Search" />
+        <span class="icon search-icon" onclick="triggerSearch()">🔍</span>
+        <span class="icon mic-icon" onclick="startVoiceInput()">🎙️</span>
+      </div>
+
+      <!-- Center: Nav Links -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="speakable">Home</a></li>
+        <li><a href="location.html" class="speakable">Location</a></li>
+        <li><a href="packages.html" class="speakable">Packages</a></li>
+        <li><a href="contact.html" class="speakable">Contact</a></li>
+        <li><a href="Login.html" class="speakable">Login</a></li>
+      </ul>
+
+      <!-- Right: Accessibility Buttons -->
+      <div class="accessibility-buttons">
+        <button onclick="toggleMagnifier()" aria-label="Toggle Magnifier">🔍 Magnifier</button>
+        <button onclick="toggleContrast()" aria-label="Toggle High Contrast Mode">🌗 Contrast</button>
+        <button onclick="toggleHoverSpeak()" aria-label="Toggle Hover Speak">🗣️ Hover Speak</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="containerc">
+    <h1 class="speakable">Connect with us</h1>
+    <p class="speakable">
+      Feel free to reach out to us for any inquiries or assistance.<br />
+      Your satisfaction is our priority!
+    </p>
+
+    <section class="contact-container">
+      <!-- Left: Contact Form -->
+      <div class="contact-form converter-card">
+        <h3 class="speakable">Send your request</h3>
+        <form onsubmit="submitContactForm(event)">
+          <label for="name" class="speakable">Name</label>
+          <input type="text" id="name" placeholder="Full Name" class="speakable" required />
+
+          <label for="phone" class="speakable">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Phone Number" class="speakable" required />
+
+          <label for="email" class="speakable">Email</label>
+          <input type="email" id="email" placeholder="Email" class="speakable" required />
+
+          <label for="address" class="speakable">Address</label>
+          <input type="text" id="address" placeholder="Address" class="speakable" />
+
+          <label for="comments" class="speakable">Message</label>
+          <textarea id="comments" rows="5" placeholder="Your Message" class="speakable" required></textarea>
+
+          <button type="submit" class="speakable">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Right: Contact Info -->
+      <div class="contact-info">
+        <h3 class="speakable">Reach us</h3>
+        <p class="speakable"><strong>Email:</strong> swiftexplorer@gmail.com</p>
+        <p class="speakable"><strong>Phone:</strong> +44 784 654 8354</p>
+        <p class="speakable"><strong>Address:</strong><br>45 Folk Street, Stratford, London, E7 7DC</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Magnifier Canvas -->
+  <canvas id="magnifierCanvas" width="150" height="150"></canvas>
+
+  <!-- Contact Form Submission Script -->
+  <script>
+    function submitContactForm(event) {
+      event.preventDefault();
+      alert('Thank you for contacting us! We will respond shortly.');
+      event.target.reset();
+    }
+  </script>
+  <footer role="contentinfo" class="site-footer">
+    <h2>Designed for inclusivity.</h2>
+  </footer>
+</body>
+</html>

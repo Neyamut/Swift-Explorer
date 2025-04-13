@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Swift Explorer - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="stylesheet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="speakable">Swift Explorer</a>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="navbar-inner">
+      <!-- Left: Search -->
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+        <span class="icon search-icon" onclick="triggerSearch()">🔍</span>
+        <span class="icon mic-icon" onclick="startVoiceInput()">🎙️</span>
+      </div>
+
+      <!-- Center: Nav Links -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="speakable">Home</a></li>
+        <li><a href="location.html" class="speakable">Location</a></li>
+        <li><a href="packages.html" class="speakable">Packages</a></li>
+        <li><a href="contact.html" class="speakable">Contact</a></li>
+        <li><a href="Login.html" class="speakable">Login</a></li>
+      </ul>
+
+      <!-- Right: Accessibility Buttons -->
+      <div class="accessibility-buttons">
+        <button onclick="toggleMagnifier()" aria-label="Toggle Magnifier">🔍 Magnifier</button>
+        <button onclick="toggleContrast()" aria-label="Toggle High Contrast Mode">🌗 Contrast</button>
+        <button onclick="toggleHoverSpeak()" aria-label="Toggle Hover Speak">🗣️ Hover Speak</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Form Section -->
+  <main class="containerm">
+    <div class="form-box">
+        <h1 class="speakable">User Login</h1>
+        <form>
+          <div class="form-group">
+            <label for="username" class="speakable">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" class="speakable login-input" />
+          </div>
+      
+          <div class="form-group">
+            <label for="password" class="speakable">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" class="speakable login-input" />
+          </div>
+      
+          <button type="submit" class="speakable">Login</button>
+      
+          <p class="speakable">Don't have an account? <a href="register.html">Register here</a></p>
+        </form>
+      </div>
+      
+      
+  </main>
+
+  <!-- Magnifier Canvas -->
+  <canvas id="magnifierCanvas" width="150" height="150"></canvas>
+
+  <!-- JS Login Script -->
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      alert("You are now logged in (simulated)!");
+      event.target.reset();
+    }
+  </script>
+  <footer role="contentinfo" class="site-footer">
+    <h2>Designed for inclusivity.</h2>
+  </footer>
+</body>
+</html>

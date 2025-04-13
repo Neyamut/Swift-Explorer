@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Swift Explorer - Locations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="stylesheet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="speakable">Swift Explorer</a>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="navbar-inner">
+      <!-- Left: Search -->
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search..." aria-label="Search" />
+        <span class="icon search-icon" onclick="triggerSearch()">🔍</span>
+        <span class="icon mic-icon" onclick="startVoiceInput()">🎙️</span>
+      </div>
+
+      <!-- Center: Nav Links -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="speakable">Home</a></li>
+        <li><a href="location.html" class="speakable">Location</a></li>
+        <li><a href="packages.html" class="speakable">Packages</a></li>
+        <li><a href="contact.html" class="speakable">Contact</a></li>
+        <li><a href="Login.html" class="speakable">Login</a></li>
+      </ul>
+
+      <!-- Right: Accessibility Buttons -->
+      <div class="accessibility-buttons">
+        <button onclick="toggleMagnifier()" aria-label="Toggle Magnifier">🔍 Magnifier</button>
+        <button onclick="toggleContrast()" aria-label="Toggle High Contrast Mode">🌗 Contrast</button>
+        <button onclick="toggleHoverSpeak()" aria-label="Toggle Hover Speak">🗣️ Hover Speak</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- PARIS -->
+    <section class="containerl city">
+      <h1 id="paris" class="speakable">PARIS</h1>
+      <p class="speakable">
+        Paris, the epitome of timeless elegance, weaves a tapestry of art, history, and romance. From the iconic Eiffel Tower to the enchanting Seine River, Paris invites you into its glowing heart. Explore the Louvre's masterpieces, Notre-Dame's Gothic grace, and the charm of Montmartre and the Latin Quarter. Paris captivates with cobbled cafés, vibrant culture, and tranquil gardens like the Jardin des Tuileries.
+      </p>
+      <div class="containerm">
+        <h2 class="speakable">Paris Location Map</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.9185124463!2d2.347035!3d48.85885484999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sen!2suk!4v1702840233956!5m2!1sen!2suk"
+          width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" aria-label="Map of Paris"></iframe>
+      </div>
+    </section>
+
+    <!-- SANTORINI -->
+    <section class="containerl city">
+      <h1 id="santorini" class="speakable">SANTORINI</h1>
+      <p class="speakable">
+        Santorini stuns with white-washed cliffs and Aegean blues. Explore Oia's legendary sunsets, the ancient ruins of Akrotiri and Thera, and volcanic beaches like Red Beach and Kamari. The island blends natural wonders, historical marvels, and warm hospitality into a dreamlike escape.
+      </p>
+      <div class="containerm">
+        <h2 class="speakable">Santorini Location Map</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12842.159499637095!2d25.432170449999997!3d36.420326249999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1499cdce05e3bce9%3A0x9f4c192bbefa1db!2sFira%20847%2000%2C%20Greece!5e0!3m2!1sen!2suk!4v1702842006253!5m2!1sen!2suk"
+          width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" aria-label="Map of Santorini"></iframe>
+      </div>
+    </section>
+
+    <!-- LONDON -->
+    <section class="containerl city">
+      <h1 id="london" class="speakable">LONDON</h1>
+      <p class="speakable">
+        London blends history, royalty, and global culture. Explore Buckingham Palace, the Tower of London, and Hyde Park. From the British Museum and Tate Modern to Big Ben and the Thames, London tells a story of tradition and innovation across its legendary skyline.
+      </p>
+      <div class="containerm">
+        <h2 class="speakable">London Location Map</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.182370726!2d-0.10159865000000001!3d51.52864165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1702842348942!5m2!1sen!2suk"
+          width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" aria-label="Map of London"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- Magnifier -->
+  <canvas id="magnifierCanvas" width="150" height="150"></canvas>
+  <footer role="contentinfo" class="site-footer">
+    <h2>Designed for inclusivity.</h2>
+  </footer>
+</body>
+</html>
