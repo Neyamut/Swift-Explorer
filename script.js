@@ -131,4 +131,46 @@ function triggerSearch() {
       alert("Please enter a search term.");
     }
   }
+function triggerSearch() {
+  const query = document.getElementById('searchInput').value.trim().toLowerCase();
+  const contentElements = document.querySelectorAll('h1, h2, h3, p, a, li');
+
+  if (!query) {
+    alert('Please enter a search term.');
+    return;
+  }
+
+  let found = false;
+
+  contentElements.forEach(el => {
+    el.style.backgroundColor = ''; // Clear previous highlights
+    if (el.textContent.toLowerCase().includes(query)) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.style.backgroundColor = '#ffff00'; // Highlight yellow
+      found = true;
+    }
+  });
+
+  if (!found) {
+    alert(`No results found for "${query}".`);
+  }
+}
+function triggerSearch() {
+  const query = document.getElementById('searchInput').value.trim();
+  if (!query) {
+    alert('Please enter a search term.');
+    return;
+  }
+
+  const localMatch = [...document.querySelectorAll('h1, h2, h3, p, a, li')]
+    .some(el => el.textContent.toLowerCase().includes(query.toLowerCase()));
+
+  if (localMatch) {
+    // Call the same highlight logic as above
+  } else {
+    if (confirm(`No local results. Search "${query}" on Google?`)) {
+      window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+    }
+  }
+}
   
