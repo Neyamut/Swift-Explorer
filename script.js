@@ -8,6 +8,12 @@ let snapshotReady = false;
 document.addEventListener('DOMContentLoaded', () => {
   canvas = document.getElementById('magnifierCanvas');
   ctx = canvas.getContext('2d');
+
+
+  const contrastState = localStorage.getItem('contrastEnabled');
+  if (contrastState === 'true') {
+    document.body.classList.add('high-contrast');
+  }
 });
 
 function speak(text) {
@@ -19,18 +25,9 @@ function speak(text) {
 }
 
 function toggleContrast() {
-    const isHighContrast = document.body.classList.toggle('high-contrast');
-    localStorage.setItem('contrastEnabled', isHighContrast);
-  }
-  
-  // On page load, apply saved contrast setting
-  document.addEventListener('DOMContentLoaded', () => {
-    const contrastState = localStorage.getItem('contrastEnabled');
-    if (contrastState === 'true') {
-      document.body.classList.add('high-contrast');
-    }
-  });
-  
+  const isHighContrast = document.body.classList.toggle('high-contrast');
+  localStorage.setItem('contrastEnabled', isHighContrast);
+}
 
 function toggleHoverSpeak() {
   hoverSpeakEnabled = !hoverSpeakEnabled;
@@ -123,54 +120,53 @@ document.addEventListener('mouseover', function (e) {
 });
 
 function triggerSearch() {
-    const query = document.getElementById('searchInput').value.trim();
-    if (query) {
-      alert("Searching for: " + query);
-      // You can replace this with real search logic
-    } else {
-      alert("Please enter a search term.");
-    }
-  }
-function triggerSearch() {
   const query = document.getElementById('searchInput').value.trim().toLowerCase();
-  const contentElements = document.querySelectorAll('h1, h2, h3, p, a, li');
-
   if (!query) {
     alert('Please enter a search term.');
     return;
   }
 
+  const contentElements = document.querySelectorAll('h1, h2, h3, p, a, li');
   let found = false;
 
+
   contentElements.forEach(el => {
-    el.style.backgroundColor = ''; // Clear previous highlights
+    el.style.backgroundColor = '';
+  });
+
+
+  contentElements.forEach(el => {
     if (el.textContent.toLowerCase().includes(query)) {
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      el.style.backgroundColor = '#ffff00'; // Highlight yellow
+      el.style.backgroundColor = '#950606'; 
       found = true;
     }
   });
 
   if (!found) {
-    alert(`No results found for "${query}".`);
-  }
-}
-function triggerSearch() {
-  const query = document.getElementById('searchInput').value.trim();
-  if (!query) {
-    alert('Please enter a search term.');
-    return;
-  }
-
-  const localMatch = [...document.querySelectorAll('h1, h2, h3, p, a, li')]
-    .some(el => el.textContent.toLowerCase().includes(query.toLowerCase()));
-
-  if (localMatch) {
-    // Call the same highlight logic as above
-  } else {
-    if (confirm(`No local results. Search "${query}" on Google?`)) {
+    if (confirm(`No local results found for "${query}". Search on Google instead?`)) {
       window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
     }
   }
 }
-  
+
+document.addEventListener('DOMContentLoaded', () => {
+  canvas = document.getElementById('magnifierCanvas');
+  ctx = canvas.getContext('2d');
+
+
+  const contrastState = localStorage.getItem('contrastEnabled');
+  if (contrastState === 'true') {
+    document.body.classList.add('high-contrast');
+  }
+
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        triggerSearch();
+      }
+    });
+  }
+});
