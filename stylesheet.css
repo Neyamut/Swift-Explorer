@@ -1,4 +1,4 @@
-/* ========== GENERAL STYLING ========== */
+
 body {
     margin: 0;
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(img1.jpg);
@@ -10,12 +10,12 @@ body {
     margin-bottom: 10px;
   }
   
-  /* ========== TYPOGRAPHY ========== */
+
   body, input, button, textarea {
     font-family: Arial, Helvetica, sans-serif;
   }
   
-  /* ========== HEADER ========== */
+
   header {
     text-align: center;
     padding: 10px;
@@ -29,7 +29,7 @@ body {
     font-weight: bold;
   }
   
-  /* ========== NAVIGATION ========== */
+
   .navbar {
     background-color: rgb(6, 154, 129);
     padding: 10px 0;
@@ -44,7 +44,7 @@ body {
     padding: 0 20px;
   }
   
-  /* Left Side: Search */
+
   .search-wrapper {
     position: relative;
     width: 250px;
@@ -77,7 +77,7 @@ body {
     right: 10px;
   }
   
-  /* Center: Nav Links */
+
   .nav-links {
     display: flex;
     gap: 30px;
@@ -99,7 +99,7 @@ body {
     border-radius: 4px;
   }
   
-  /* Right Side: Accessibility Buttons */
+
   .accessibility-buttons {
     display: flex;
     gap: 10px;
@@ -122,7 +122,7 @@ body {
   
   
   
-  /* ========== TITLES & TEXT ========== */
+
   .title {
     text-align: center;
     color: white;
@@ -132,7 +132,7 @@ body {
   .t1 { font-size: 25px; }
   .para { margin-top: -10px; }
   
-  /* ========== FLEXIBLE LAYOUTS ========== */
+
   .container, .containerpac {
     display: flex;
     justify-content: center;
@@ -156,7 +156,7 @@ body {
     flex-direction: column;
   }
   
-  /* ========== CARDS ========== */
+
   .card, .cardpac {
     background-color: rgb(6, 154, 129);
     width: 470px;
@@ -202,7 +202,7 @@ body {
   .p2 { background-image: url(img4.jpg); }
   .p3 { background-image: url(img5.jpg); }
   
-  /* ========== TEXT BLOCKS ========== */
+
   .txt {
     color: white;
     text-align: center;
@@ -237,7 +237,7 @@ body {
     padding-top: 20px;
   }
   
-  /* ========== FORM ELEMENTS ========== */
+
   textarea, input[type="text"], input[type="email"], input[type="number"] {
     width: 100%;
     padding: 10px;
@@ -257,7 +257,7 @@ body {
     resize: vertical;
   }
   
-  /* ========== BUTTONS ========== */
+
   button, .btn-field button {
     padding: 8px 16px;
     margin: 5px;
@@ -274,7 +274,7 @@ body {
     transform: scale(1.1);
   }
   
-  /* ========== RESPONSIVE ========== */
+
   @media (max-width: 768px) {
     .search-container {
       flex-direction: column;
@@ -285,7 +285,7 @@ body {
     }
   }
   
-  /* ========== ACCESSIBILITY ========== */
+
   .visually-hidden {
     position: absolute;
     width: 1px;
@@ -321,7 +321,7 @@ body {
     background-color: #000 !important;
   }
   
-  /* Focus styles */
+
   a:focus,
   button:focus,
   input:focus,
@@ -332,7 +332,7 @@ body {
     color: #fff;
   }
   
-  /* Optional link enhancements */
+
   a {
     text-decoration: underline;
   }
@@ -342,7 +342,7 @@ body {
     background-color: #111;
   }
   
-  /* Hover speak */
+
   .hover-speak-enabled .speakable {
     cursor: pointer;
     outline: 2px dashed #ffa500;
@@ -352,7 +352,7 @@ body {
     background-color: #fffae637;
   }
   
-  /* Magnifier Canvas */
+
   #magnifierCanvas {
     position: fixed;
     width: 150px;
@@ -553,3 +553,59 @@ body {
       align-items: center;
     }
   }
+
+
+  
+/* ========== RESPONSIVE DESIGN UPDATES ========== */
+@media screen and (max-width: 768px) {
+  header, nav, .container, .search-container, .contact-container, .card, .cardpac {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .search-wrapper {
+    width: 100%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea {
+    width: 90%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .accessibility-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  img, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .title {
+    font-size: 24px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  h1, h2 {
+    font-size: 22px;
+  }
+
+  p, li {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
